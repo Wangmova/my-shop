@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="高品質な商品をお手頃価格で提供するオンラインショップ">
+    <title>My Shop - オンラインショップ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span>🛍️</span>
+                    <span>My Shop</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#products">商品</a></li>
+                        <li><a href="#about">会社情報</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon" onclick="toggleCart()" aria-label="ショッピングカート">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to My Shop</h1>
+            <p>高品質な商品をお手頃な価格でお届けします</p>
+        </div>
+    </section>
+
+    <!-- 商品セクション -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>人気商品</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <h3 class="product-title">スマートフォン</h3>
+                        <p class="product-description">最新モデル、高性能カメラ搭載</p>
+                        <p class="product-price">¥89,800</p>
+                        <button class="add-to-cart" onclick="addToCart(1, 'スマートフォン', 89800)">カートに追加</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">💻</div>
+                    <div class="product-info">
+                        <h3 class="product-title">ノートパソコン</h3>
+                        <p class="product-description">軽量で高性能、ビジネスに最適</p>
+                        <p class="product-price">¥129,800</p>
+                        <button class="add-to-cart" onclick="addToCart(2, 'ノートパソコン', 129800)">カートに追加</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">⌚</div>
+                    <div class="product-info">
+                        <h3 class="product-title">スマートウォッチ</h3>
+                        <p class="product-description">健康管理機能充実</p>
+                        <p class="product-price">¥39,800</p>
+                        <button class="add-to-cart" onclick="addToCart(3, 'スマートウォッチ', 39800)">カートに追加</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">🎧</div>
+                    <div class="product-info">
+                        <h3 class="product-title">ワイヤレスイヤホン</h3>
+                        <p class="product-description">ノイズキャンセリング機能付き</p>
+                        <p class="product-price">¥24,800</p>
+                        <button class="add-to-cart" onclick="addToCart(4, 'ワイヤレスイヤホン', 24800)">カートに追加</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">📷</div>
+                    <div class="product-info">
+                        <h3 class="product-title">デジタルカメラ</h3>
+                        <p class="product-description">4K動画撮影対応</p>
+                        <p class="product-price">¥79,800</p>
+                        <button class="add-to-cart" onclick="addToCart(5, 'デジタルカメラ', 79800)">カートに追加</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">🎮</div>
+                    <div class="product-info">
+                        <h3 class="product-title">ゲーム機</h3>
+                        <p class="product-description">最新ゲームが楽しめる</p>
+                        <p class="product-price">¥49,800</p>
+                        <button class="add-to-cart" onclick="addToCart(6, 'ゲーム機', 49800)">カートに追加</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">⌨️</div>
+                    <div class="product-info">
+                        <h3 class="product-title">メカニカルキーボード</h3>
+                        <p class="product-description">RGB照明付き、高速タイピング</p>
+                        <p class="product-price">¥19,800</p>
+                        <button class="add-to-cart" onclick="addToCart(7, 'メカニカルキーボード', 19800)">カートに追加</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">🖱️</div>
+                    <div class="product-info">
+                        <h3 class="product-title">ゲーミングマウス</h3>
+                        <p class="product-description">高精度センサー搭載</p>
+                        <p class="product-price">¥12,800</p>
+                        <button class="add-to-cart" onclick="addToCart(8, 'ゲーミングマウス', 12800)">カートに追加</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">🖥️</div>
+                    <div class="product-info">
+                        <h3 class="product-title">液晶モニター</h3>
+                        <p class="product-description">27インチ、4K解像度</p>
+                        <p class="product-price">¥54,800</p>
+                        <button class="add-to-cart" onclick="addToCart(9, '液晶モニター', 54800)">カートに追加</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- カートモーダル -->
+    <div class="cart-modal" id="cartModal" onclick="closeCartOnBackdrop(event)">
+        <div class="cart-content" onclick="event.stopPropagation()">
+            <div class="cart-header">
+                <h2>ショッピングカート</h2>
+                <button class="close-cart" onclick="toggleCart()" aria-label="カートを閉じる">✕</button>
+            </div>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                合計: <span id="cartTotal">¥0</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">購入手続きへ</button>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>会社情報</h3>
+                    <ul>
+                        <li><a href="#about">会社概要</a></li>
+                        <li><a href="#">採用情報</a></li>
+                        <li><a href="#">プレスリリース</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>サポート</h3>
+                    <ul>
+                        <li><a href="#">よくある質問</a></li>
+                        <li><a href="#">配送について</a></li>
+                        <li><a href="#">返品・交換</a></li>
+                        <li><a href="#">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>お買い物ガイド</h3>
+                    <ul>
+                        <li><a href="#">お支払い方法</a></li>
+                        <li><a href="#">送料について</a></li>
+                        <li><a href="#">ポイント制度</a></li>
+                        <li><a href="#">会員登録</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>フォローする</h3>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 My Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // カートの状態管理
+        let cart = [];
+
+        // カートに商品を追加
+        function addToCart(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+
+            updateCart();
+            showNotification('商品をカートに追加しました');
+        }
+
+        // カートから商品を削除
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+            showNotification('商品をカートから削除しました');
+        }
+
+        // 数量を変更
+        function updateQuantity(id, change) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    updateCart();
+                }
+            }
+        }
+
+        // カート表示を更新
+        function updateCart() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            // カート内の商品数を更新
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            // カートが空の場合
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="empty-cart">カートは空です</div>';
+                cartTotal.textContent = '¥0';
+                return;
+            }
+
+            // カート内の商品を表示
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>¥${item.price.toLocaleString()} × ${item.quantity}</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-item" onclick="removeFromCart(${item.id})">削除</button>
+                </div>
+            `).join('');
+
+            // 合計金額を計算
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `¥${total.toLocaleString()}`;
+        }
+
+        // カートモーダルの開閉
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            modal.classList.toggle('active');
+        }
+
+        // 背景クリックでカートを閉じる
+        function closeCartOnBackdrop(event) {
+            if (event.target.id === 'cartModal') {
+                toggleCart();
+            }
+        }
+
+        // 購入手続き
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification('カートが空です');
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            alert(`ご購入ありがとうございます！\n合計金額: ¥${total.toLocaleString()}\n\n（このデモでは実際の決済は行われません）`);
+
+            cart = [];
+            updateCart();
+            toggleCart();
+        }
+
+        // 通知を表示
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // ページ読み込み時にカートを初期化
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCart();
+        });
+
+        // ESCキーでカートを閉じる
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('cartModal');
+                if (modal.classList.contains('active')) {
+                    toggleCart();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
