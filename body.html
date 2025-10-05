@@ -1,0 +1,120 @@
+<!-- ヒーローセクション -->
+<section class="hero" id="home">
+    <div class="container">
+        <h1 data-i18n="hero.title">Welcome to My Shop</h1>
+        <p data-i18n="hero.subtitle">高品質な商品をお手頃な価格でお届けします</p>
+    </div>
+</section>
+
+<!-- 商品セクション -->
+<section class="products" id="products">
+    <div class="container">
+        <h2 data-i18n="products.title">人気商品</h2>
+        <div class="product-grid">
+            <article class="product-card" data-product="1">
+                <div class="product-image">📱</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.smartphone.name">スマートフォン</h3>
+                    <p class="product-description" data-i18n="products.items.smartphone.desc">最新モデル、高性能カメラ搭載</p>
+                    <p class="product-price">¥89,800</p>
+                    <button class="add-to-cart" onclick="addToCart(1, 'smartphone', 89800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-product="2">
+                <div class="product-image">💻</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.laptop.name">ノートパソコン</h3>
+                    <p class="product-description" data-i18n="products.items.laptop.desc">軽量で高性能、ビジネスに最適</p>
+                    <p class="product-price">¥129,800</p>
+                    <button class="add-to-cart" onclick="addToCart(2, 'laptop', 129800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-product="3">
+                <div class="product-image">⌚</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.smartwatch.name">スマートウォッチ</h3>
+                    <p class="product-description" data-i18n="products.items.smartwatch.desc">健康管理機能充実</p>
+                    <p class="product-price">¥39,800</p>
+                    <button class="add-to-cart" onclick="addToCart(3, 'smartwatch', 39800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-product="4">
+                <div class="product-image">🎧</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.earphones.name">ワイヤレスイヤホン</h3>
+                    <p class="product-description" data-i18n="products.items.earphones.desc">ノイズキャンセリング機能付き</p>
+                    <p class="product-price">¥24,800</p>
+                    <button class="add-to-cart" onclick="addToCart(4, 'earphones', 24800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-product="5">
+                <div class="product-image">📷</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.camera.name">デジタルカメラ</h3>
+                    <p class="product-description" data-i18n="products.items.camera.desc">4K動画撮影対応</p>
+                    <p class="product-price">¥79,800</p>
+                    <button class="add-to-cart" onclick="addToCart(5, 'camera', 79800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-product="6">
+                <div class="product-image">🎮</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.console.name">ゲーム機</h3>
+                    <p class="product-description" data-i18n="products.items.console.desc">最新ゲームが楽しめる</p>
+                    <p class="product-price">¥49,800</p>
+                    <button class="add-to-cart" onclick="addToCart(6, 'console', 49800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-product="7">
+                <div class="product-image">⌨️</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.keyboard.name">メカニカルキーボード</h3>
+                    <p class="product-description" data-i18n="products.items.keyboard.desc">RGB照明付き、高速タイピング</p>
+                    <p class="product-price">¥19,800</p>
+                    <button class="add-to-cart" onclick="addToCart(7, 'keyboard', 19800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-product="8">
+                <div class="product-image">🖱️</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.mouse.name">ゲーミングマウス</h3>
+                    <p class="product-description" data-i18n="products.items.mouse.desc">高精度センサー搭載</p>
+                    <p class="product-price">¥12,800</p>
+                    <button class="add-to-cart" onclick="addToCart(8, 'mouse', 12800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-product="9">
+                <div class="product-image">🖥️</div>
+                <div class="product-info">
+                    <h3 class="product-title" data-i18n="products.items.monitor.name">液晶モニター</h3>
+                    <p class="product-description" data-i18n="products.items.monitor.desc">27インチ、4K解像度</p>
+                    <p class="product-price">¥54,800</p>
+                    <button class="add-to-cart" onclick="addToCart(9, 'monitor', 54800)" data-i18n="products.addToCart">カートに追加</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- カートモーダル -->
+<div class="cart-modal" id="cartModal" onclick="closeCartOnBackdrop(event)">
+    <div class="cart-content" onclick="event.stopPropagation()">
+        <div class="cart-header">
+            <h2 data-i18n="cart.title">ショッピングカート</h2>
+            <button class="close-cart" onclick="toggleCart()" aria-label="カートを閉じる">✕</button>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-total">
+            <span data-i18n="cart.total">合計</span>: <span id="cartTotal">¥0</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()" data-i18n="cart.checkout">購入手続きへ</button>
+    </div>
+</div>

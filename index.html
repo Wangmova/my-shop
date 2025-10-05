@@ -8,199 +8,208 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ヘッダー -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span>🛍️</span>
-                    <span>My Shop</span>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">ホーム</a></li>
-                        <li><a href="#products">商品</a></li>
-                        <li><a href="#about">会社情報</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
-                    </ul>
-                </nav>
-                <div class="cart-icon" onclick="toggleCart()" aria-label="ショッピングカート">
-                    🛒
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- ヘッダーをインクルード -->
+    <div id="header-container"></div>
 
-    <!-- ヒーローセクション -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Welcome to My Shop</h1>
-            <p>高品質な商品をお手頃な価格でお届けします</p>
-        </div>
-    </section>
+    <!-- ボディをインクルード -->
+    <div id="body-container"></div>
 
-    <!-- 商品セクション -->
-    <section class="products" id="products">
-        <div class="container">
-            <h2>人気商品</h2>
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="product-image">📱</div>
-                    <div class="product-info">
-                        <h3 class="product-title">スマートフォン</h3>
-                        <p class="product-description">最新モデル、高性能カメラ搭載</p>
-                        <p class="product-price">¥89,800</p>
-                        <button class="add-to-cart" onclick="addToCart(1, 'スマートフォン', 89800)">カートに追加</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">💻</div>
-                    <div class="product-info">
-                        <h3 class="product-title">ノートパソコン</h3>
-                        <p class="product-description">軽量で高性能、ビジネスに最適</p>
-                        <p class="product-price">¥129,800</p>
-                        <button class="add-to-cart" onclick="addToCart(2, 'ノートパソコン', 129800)">カートに追加</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">⌚</div>
-                    <div class="product-info">
-                        <h3 class="product-title">スマートウォッチ</h3>
-                        <p class="product-description">健康管理機能充実</p>
-                        <p class="product-price">¥39,800</p>
-                        <button class="add-to-cart" onclick="addToCart(3, 'スマートウォッチ', 39800)">カートに追加</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">🎧</div>
-                    <div class="product-info">
-                        <h3 class="product-title">ワイヤレスイヤホン</h3>
-                        <p class="product-description">ノイズキャンセリング機能付き</p>
-                        <p class="product-price">¥24,800</p>
-                        <button class="add-to-cart" onclick="addToCart(4, 'ワイヤレスイヤホン', 24800)">カートに追加</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">📷</div>
-                    <div class="product-info">
-                        <h3 class="product-title">デジタルカメラ</h3>
-                        <p class="product-description">4K動画撮影対応</p>
-                        <p class="product-price">¥79,800</p>
-                        <button class="add-to-cart" onclick="addToCart(5, 'デジタルカメラ', 79800)">カートに追加</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">🎮</div>
-                    <div class="product-info">
-                        <h3 class="product-title">ゲーム機</h3>
-                        <p class="product-description">最新ゲームが楽しめる</p>
-                        <p class="product-price">¥49,800</p>
-                        <button class="add-to-cart" onclick="addToCart(6, 'ゲーム機', 49800)">カートに追加</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">⌨️</div>
-                    <div class="product-info">
-                        <h3 class="product-title">メカニカルキーボード</h3>
-                        <p class="product-description">RGB照明付き、高速タイピング</p>
-                        <p class="product-price">¥19,800</p>
-                        <button class="add-to-cart" onclick="addToCart(7, 'メカニカルキーボード', 19800)">カートに追加</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">🖱️</div>
-                    <div class="product-info">
-                        <h3 class="product-title">ゲーミングマウス</h3>
-                        <p class="product-description">高精度センサー搭載</p>
-                        <p class="product-price">¥12,800</p>
-                        <button class="add-to-cart" onclick="addToCart(8, 'ゲーミングマウス', 12800)">カートに追加</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">🖥️</div>
-                    <div class="product-info">
-                        <h3 class="product-title">液晶モニター</h3>
-                        <p class="product-description">27インチ、4K解像度</p>
-                        <p class="product-price">¥54,800</p>
-                        <button class="add-to-cart" onclick="addToCart(9, '液晶モニター', 54800)">カートに追加</button>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- カートモーダル -->
-    <div class="cart-modal" id="cartModal" onclick="closeCartOnBackdrop(event)">
-        <div class="cart-content" onclick="event.stopPropagation()">
-            <div class="cart-header">
-                <h2>ショッピングカート</h2>
-                <button class="close-cart" onclick="toggleCart()" aria-label="カートを閉じる">✕</button>
-            </div>
-            <div id="cartItems"></div>
-            <div class="cart-total">
-                合計: <span id="cartTotal">¥0</span>
-            </div>
-            <button class="checkout-btn" onclick="checkout()">購入手続きへ</button>
-        </div>
-    </div>
-
-    <!-- フッター -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>会社情報</h3>
-                    <ul>
-                        <li><a href="#about">会社概要</a></li>
-                        <li><a href="#">採用情報</a></li>
-                        <li><a href="#">プレスリリース</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>サポート</h3>
-                    <ul>
-                        <li><a href="#">よくある質問</a></li>
-                        <li><a href="#">配送について</a></li>
-                        <li><a href="#">返品・交換</a></li>
-                        <li><a href="#">お問い合わせ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>お買い物ガイド</h3>
-                    <ul>
-                        <li><a href="#">お支払い方法</a></li>
-                        <li><a href="#">送料について</a></li>
-                        <li><a href="#">ポイント制度</a></li>
-                        <li><a href="#">会員登録</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>フォローする</h3>
-                    <ul>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">YouTube</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 My Shop. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- フッターをインクルード -->
+    <div id="footer-container"></div>
 
     <!-- JavaScript -->
     <script>
+        // HTMLパーツを読み込む関数
+        async function loadHTML(url, containerId) {
+            try {
+                const response = await fetch(url);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading ${url}:`, error);
+            }
+        }
+
+        // ページ読み込み時に各パーツを読み込む
+        async function loadAllParts() {
+            await Promise.all([
+                loadHTML('header.html', 'header-container'),
+                loadHTML('body.html', 'body-container'),
+                loadHTML('footer.html', 'footer-container')
+            ]);
+            // パーツ読み込み後に初期化
+            updateCart();
+        }
+
+        // DOMContentLoadedイベントでパーツを読み込む
+        document.addEventListener('DOMContentLoaded', loadAllParts);
+
+        // 翻訳データ
+        const translations = {
+            ja: {
+                nav: {
+                    home: 'ホーム',
+                    products: '商品',
+                    about: '会社情報',
+                    contact: 'お問い合わせ'
+                },
+                hero: {
+                    title: 'Welcome to My Shop',
+                    subtitle: '高品質な商品をお手頃な価格でお届けします'
+                },
+                products: {
+                    title: '人気商品',
+                    addToCart: 'カートに追加',
+                    items: {
+                        smartphone: { name: 'スマートフォン', desc: '最新モデル、高性能カメラ搭載' },
+                        laptop: { name: 'ノートパソコン', desc: '軽量で高性能、ビジネスに最適' },
+                        smartwatch: { name: 'スマートウォッチ', desc: '健康管理機能充実' },
+                        earphones: { name: 'ワイヤレスイヤホン', desc: 'ノイズキャンセリング機能付き' },
+                        camera: { name: 'デジタルカメラ', desc: '4K動画撮影対応' },
+                        console: { name: 'ゲーム機', desc: '最新ゲームが楽しめる' },
+                        keyboard: { name: 'メカニカルキーボード', desc: 'RGB照明付き、高速タイピング' },
+                        mouse: { name: 'ゲーミングマウス', desc: '高精度センサー搭載' },
+                        monitor: { name: '液晶モニター', desc: '27インチ、4K解像度' }
+                    }
+                },
+                cart: {
+                    title: 'ショッピングカート',
+                    total: '合計',
+                    checkout: '購入手続きへ',
+                    empty: 'カートは空です',
+                    added: '商品をカートに追加しました',
+                    removed: '商品をカートから削除しました',
+                    remove: '削除'
+                },
+                footer: {
+                    company: {
+                        title: '会社情報',
+                        about: '会社概要',
+                        careers: '採用情報',
+                        press: 'プレスリリース'
+                    },
+                    support: {
+                        title: 'サポート',
+                        faq: 'よくある質問',
+                        shipping: '配送について',
+                        returns: '返品・交換',
+                        contact: 'お問い合わせ'
+                    },
+                    guide: {
+                        title: 'お買い物ガイド',
+                        payment: 'お支払い方法',
+                        shippingFee: '送料について',
+                        points: 'ポイント制度',
+                        register: '会員登録'
+                    },
+                    social: {
+                        title: 'フォローする'
+                    }
+                },
+                checkout: {
+                    message: 'ご購入ありがとうございます！\n合計金額: {total}\n\n（このデモでは実際の決済は行われません）'
+                }
+            },
+            en: {
+                nav: {
+                    home: 'Home',
+                    products: 'Products',
+                    about: 'About',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Welcome to My Shop',
+                    subtitle: 'High-quality products at affordable prices'
+                },
+                products: {
+                    title: 'Popular Products',
+                    addToCart: 'Add to Cart',
+                    items: {
+                        smartphone: { name: 'Smartphone', desc: 'Latest model with high-performance camera' },
+                        laptop: { name: 'Laptop', desc: 'Lightweight and powerful, perfect for business' },
+                        smartwatch: { name: 'Smartwatch', desc: 'Advanced health monitoring features' },
+                        earphones: { name: 'Wireless Earphones', desc: 'Noise cancelling enabled' },
+                        camera: { name: 'Digital Camera', desc: '4K video recording support' },
+                        console: { name: 'Gaming Console', desc: 'Play the latest games' },
+                        keyboard: { name: 'Mechanical Keyboard', desc: 'RGB lighting, high-speed typing' },
+                        mouse: { name: 'Gaming Mouse', desc: 'High-precision sensor' },
+                        monitor: { name: 'LCD Monitor', desc: '27-inch, 4K resolution' }
+                    }
+                },
+                cart: {
+                    title: 'Shopping Cart',
+                    total: 'Total',
+                    checkout: 'Proceed to Checkout',
+                    empty: 'Your cart is empty',
+                    added: 'Item added to cart',
+                    removed: 'Item removed from cart',
+                    remove: 'Remove'
+                },
+                footer: {
+                    company: {
+                        title: 'Company',
+                        about: 'About Us',
+                        careers: 'Careers',
+                        press: 'Press Release'
+                    },
+                    support: {
+                        title: 'Support',
+                        faq: 'FAQ',
+                        shipping: 'Shipping Info',
+                        returns: 'Returns & Exchanges',
+                        contact: 'Contact Us'
+                    },
+                    guide: {
+                        title: 'Shopping Guide',
+                        payment: 'Payment Methods',
+                        shippingFee: 'Shipping Fees',
+                        points: 'Points Program',
+                        register: 'Register'
+                    },
+                    social: {
+                        title: 'Follow Us'
+                    }
+                },
+                checkout: {
+                    message: 'Thank you for your purchase!\nTotal: {total}\n\n(This is a demo. No actual payment will be processed)'
+                }
+            }
+        };
+
+        // 現在の言語
+        let currentLanguage = 'ja';
+
+        // 言語を変更
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            document.documentElement.lang = lang;
+            updatePageLanguage();
+        }
+
+        // ページの言語を更新
+        function updatePageLanguage() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const translation = getTranslation(key);
+                if (translation) {
+                    element.textContent = translation;
+                }
+            });
+            // カートも更新
+            updateCart();
+        }
+
+        // 翻訳を取得
+        function getTranslation(key) {
+            const keys = key.split('.');
+            let value = translations[currentLanguage];
+            for (const k of keys) {
+                value = value?.[k];
+            }
+            return value;
+        }
+
         // カートの状態管理
         let cart = [];
 
@@ -215,14 +224,14 @@
             }
 
             updateCart();
-            showNotification('商品をカートに追加しました');
+            showNotification(getTranslation('cart.added'));
         }
 
         // カートから商品を削除
         function removeFromCart(id) {
             cart = cart.filter(item => item.id !== id);
             updateCart();
-            showNotification('商品をカートから削除しました');
+            showNotification(getTranslation('cart.removed'));
         }
 
         // 数量を変更
@@ -250,16 +259,18 @@
 
             // カートが空の場合
             if (cart.length === 0) {
-                cartItems.innerHTML = '<div class="empty-cart">カートは空です</div>';
+                cartItems.innerHTML = `<div class="empty-cart">${getTranslation('cart.empty')}</div>`;
                 cartTotal.textContent = '¥0';
                 return;
             }
 
             // カート内の商品を表示
-            cartItems.innerHTML = cart.map(item => `
+            cartItems.innerHTML = cart.map(item => {
+                const productName = getTranslation(`products.items.${item.name}.name`) || item.name;
+                return `
                 <div class="cart-item">
                     <div class="cart-item-info">
-                        <h4>${item.name}</h4>
+                        <h4>${productName}</h4>
                         <p>¥${item.price.toLocaleString()} × ${item.quantity}</p>
                         <div class="quantity-controls">
                             <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
@@ -267,9 +278,9 @@
                             <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
                         </div>
                     </div>
-                    <button class="remove-item" onclick="removeFromCart(${item.id})">削除</button>
+                    <button class="remove-item" onclick="removeFromCart(${item.id})">${getTranslation('cart.remove')}</button>
                 </div>
-            `).join('');
+            `}).join('');
 
             // 合計金額を計算
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -292,12 +303,13 @@
         // 購入手続き
         function checkout() {
             if (cart.length === 0) {
-                showNotification('カートが空です');
+                showNotification(getTranslation('cart.empty'));
                 return;
             }
 
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            alert(`ご購入ありがとうございます！\n合計金額: ¥${total.toLocaleString()}\n\n（このデモでは実際の決済は行われません）`);
+            const message = getTranslation('checkout.message').replace('{total}', `¥${total.toLocaleString()}`);
+            alert(message);
 
             cart = [];
             updateCart();
@@ -315,11 +327,6 @@
                 notification.remove();
             }, 3000);
         }
-
-        // ページ読み込み時にカートを初期化
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCart();
-        });
 
         // ESCキーでカートを閉じる
         document.addEventListener('keydown', (event) => {

@@ -1,0 +1,29 @@
+<!-- ヘッダー -->
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <span>🛍️</span>
+                <span>My Shop</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" data-i18n="nav.home">ホーム</a></li>
+                    <li><a href="#products" data-i18n="nav.products">商品</a></li>
+                    <li><a href="#about" data-i18n="nav.about">会社情報</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <select id="languageSelect" onchange="changeLanguage(this.value)">
+                    <option value="ja">日本語</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()" aria-label="ショッピングカート">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </div>
+</header>
