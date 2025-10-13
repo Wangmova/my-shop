@@ -144,6 +144,56 @@ nav a:hover {
     }
 }
 
+/* 会社情報セクション */
+.company-info {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.company-info h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+.company-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.company-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.company-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.company-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.company-card p {
+    color: #555;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
 /* 商品セクション */
 .products {
     padding: 4rem 0;
