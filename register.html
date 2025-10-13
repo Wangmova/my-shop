@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Shop - 会員登録">
+    <title>会員登録 - My Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 会員登録ページ専用のスタイル */
+        .register-container {
+            max-width: 500px;
+            margin: 80px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .register-header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .register-header p {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group input.error {
+            border-color: #e74c3c;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .register-button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .register-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .register-button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #2980b9;
+        }
+
+        .back-link::before {
+            content: "←";
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .register-container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            
+            .register-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダーをインクルード -->
+    <div id="header-container"></div>
+
+    <div class="container">
+        <div class="register-container">
+            <a href="index.html" class="back-link">トップページに戻る</a>
+            
+            <div class="register-header">
+                <h1>会員登録</h1>
+                <p>My Shopの会員になってお得にお買い物を楽しみましょう</p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                会員登録が完了しました！ログインしてお買い物をお楽しみください。
+            </div>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="name">お名前 <span style="color: #e74c3c;">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス <span style="color: #e74c3c;">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">パスワード <span style="color: #e74c3c;">*</span></label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">パスワード（確認） <span style="color: #e74c3c;">*</span></label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <div class="error-message" id="confirmPasswordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone">
+                    <div class="error-message" id="phoneError"></div>
+                </div>
+
+                <button type="submit" class="register-button" id="registerButton">
+                    会員登録
+                </button>
+            </form>
+
+            <div class="login-link">
+                <p>既にアカウントをお持ちの方は <a href="#login">こちらからログイン</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッターをインクルード -->
+    <div id="footer-container"></div>
+
+    <script>
+        // HTMLパーツを読み込む関数
+        async function loadHTML(url, containerId) {
+            try {
+                const response = await fetch(url);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading ${url}:`, error);
+            }
+        }
+
+        // ページ読み込み時に各パーツを読み込む
+        async function loadAllParts() {
+            await Promise.all([
+                loadHTML('header.html', 'header-container'),
+                loadHTML('footer.html', 'footer-container')
+            ]);
+        }
+
+        // DOMContentLoadedイベントでパーツを読み込む
+        document.addEventListener('DOMContentLoaded', loadAllParts);
+
+        // バリデーション関数
+        function validateForm() {
+            let isValid = true;
+            
+            // 名前のバリデーション
+            const name = document.getElementById('name').value.trim();
+            const nameError = document.getElementById('nameError');
+            if (name.length < 2) {
+                showError('name', 'お名前は2文字以上で入力してください');
+                isValid = false;
+            } else {
+                clearError('name');
+            }
+
+            // メールアドレスのバリデーション
+            const email = document.getElementById('email').value.trim();
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showError('email', '正しいメールアドレスを入力してください');
+                isValid = false;
+            } else {
+                clearError('email');
+            }
+
+            // パスワードのバリデーション
+            const password = document.getElementById('password').value;
+            const passwordError = document.getElementById('passwordError');
+            if (password.length < 6) {
+                showError('password', 'パスワードは6文字以上で入力してください');
+                isValid = false;
+            } else {
+                clearError('password');
+            }
+
+            // パスワード確認のバリデーション
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (password !== confirmPassword) {
+                showError('confirmPassword', 'パスワードが一致しません');
+                isValid = false;
+            } else {
+                clearError('confirmPassword');
+            }
+
+            // 電話番号のバリデーション（オプション）
+            const phone = document.getElementById('phone').value.trim();
+            if (phone && !/^[0-9-+()\s]+$/.test(phone)) {
+                showError('phone', '正しい電話番号を入力してください');
+                isValid = false;
+            } else {
+                clearError('phone');
+            }
+
+            return isValid;
+        }
+
+        function showError(fieldName, message) {
+            const field = document.getElementById(fieldName);
+            const errorElement = document.getElementById(fieldName + 'Error');
+            
+            field.classList.add('error');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function clearError(fieldName) {
+            const field = document.getElementById(fieldName);
+            const errorElement = document.getElementById(fieldName + 'Error');
+            
+            field.classList.remove('error');
+            errorElement.style.display = 'none';
+        }
+
+        // フォーム送信処理
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                const registerButton = document.getElementById('registerButton');
+                registerButton.disabled = true;
+                registerButton.textContent = '登録中...';
+                
+                // 実際のアプリケーションでは、ここでサーバーにデータを送信
+                setTimeout(() => {
+                    const successMessage = document.getElementById('successMessage');
+                    successMessage.style.display = 'block';
+                    
+                    // フォームをリセット
+                    document.getElementById('registerForm').reset();
+                    
+                    // ボタンを元に戻す
+                    registerButton.disabled = false;
+                    registerButton.textContent = '会員登録';
+                    
+                    // 3秒後にトップページにリダイレクト
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 3000);
+                }, 1500);
+            }
+        });
+
+        // 入力中のリアルタイムバリデーション
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim()) {
+                    validateForm();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
