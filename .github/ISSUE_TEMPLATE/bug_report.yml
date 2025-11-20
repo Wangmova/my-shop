@@ -50,6 +50,53 @@ body:
       required: true
 
   - type: textarea
+    id: error_message
+    attributes:
+      label: エラーメッセージ
+      description: エラーメッセージやスタックトレースがあれば記載してください
+      placeholder: |
+        ```
+        [エラーメッセージをここに貼り付け]
+        ```
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: fix_location
+    attributes:
+      label: 修正箇所（推定）
+      description: |
+        AI向けに具体的な修正箇所を指定してください。
+        ファイル名、クラス名、メソッド名を明記すると修正成功率が向上します。
+      placeholder: |
+        - ファイル名: UserValidator.java
+        - クラス名: UserValidator
+        - メソッド名: emailValidation
+        - 行番号: 45-60（分かる場合）
+    validations:
+      required: false
+
+  - type: textarea
+    id: related_features
+    attributes:
+      label: デグレード防止の注意点
+      description: |
+        影響を受ける可能性がある関連機能をリストアップしてください。
+        AIは機能間の連携を把握しきれないため、明示的に指定することが重要です。
+      placeholder: |
+        影響を受ける可能性がある関連機能：
+        - ユーザーログイン機能
+        - パスワードリセット機能
+        - ユーザー一覧画面の表示
+
+        修正後、以下を確認：
+        - 既存のテストがすべて通ること
+        - 上記の関連機能が正常に動作すること
+    validations:
+      required: false
+
+  - type: textarea
     id: environment
     attributes:
       label: 環境情報
